@@ -105,16 +105,16 @@ if(!_.isUndefined(ARGS.filter)) {
     var mandate; var uparam = v.split(':');
       switch(uparam[2]){
         case '1':
-          mandate="must"
+          mandate="must";
           break;
         case '0':
-          mandate="mustNot"
+          mandate="mustNot";
           break;
         case '2':
-          mandate="either"
+          mandate="either";
           break;
         default:
-          mandate="must"
+          mandate="must";
       }
     return [k+1,{
       query: uparam[1],
