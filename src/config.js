@@ -75,8 +75,7 @@ function (Settings) {
       'query',
       'terms',
       'stats',
-      'sparklines',
-      'heatmap'
+      'sparklines'
     ]
   });
 });
