@@ -102,20 +102,21 @@ var timefilter = {
 // NOTE: ids must be integers, hence the parseInt()s - User filter Ids start with 1 to include time filter at 0
 if(!_.isUndefined(ARGS.filter)) {
   filters = _.object(_.map(ARGS.filter.split(ARGS.split||','), function(v,k) {
-    var mandate; var uparam = v.split(':');
-      switch(uparam[2]){
-        case '1':
-          mandate="must";
-          break;
-        case '0':
-          mandate="mustNot";
-          break;
-        case '2':
-          mandate="either";
-          break;
-        default:
-          mandate="must";
-      }
+    var mandate;
+    var uparam = v.split(':');
+    switch(uparam[2]){
+    case '1':
+      mandate="must";
+      break;
+    case '0':
+      mandate="mustNot";
+      break;
+    case '2':
+      mandate="either";
+      break;
+    default:
+      mandate="must";
+    }
     return [k+1,{
       query: uparam[1],
       field: uparam[0],
