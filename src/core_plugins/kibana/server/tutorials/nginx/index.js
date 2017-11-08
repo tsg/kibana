@@ -1,17 +1,17 @@
 import { TUTORIAL_CATEGORY } from '../../../common/tutorials/tutorial_category';
 import { INSTRUCTION_VARIANT } from '../../../common/tutorials/instruction_variant';
 
-export function apacheSpecProvider() {
+export function nginxSpecProvider() {
   return {
-    id: 'apache',
-    name: 'Apache logs',
+    id: 'nginx',
+    name: 'Nginx logs',
     category: TUTORIAL_CATEGORY.LOGGING,
-    shortDescription: 'This module parses access and error logs created by the Apache HTTP server.',
-    longDescription: 'This module parses access and error logs created by the Apache 2 HTTP server.' +
-                     ' You can read more about the Filebeat Apache module in the [documentation].',
+    shortDescription: 'This module parses access and error logs created by the Nginx HTTP server.',
+    longDescription: 'This module parses access and error logs created by the Nginx HTTP server.' +
+                     ' You can read more about the Filebeat Nginx module in the [documentation].',
     //iconPath: '', TODO
     completionTimeMinutes: 10,
-    previewImagePath: 'kibana-apache2.png',
+    //previewImagePath: '', TODO
     instructionSets: [
       {
         title: 'Getting Started',
@@ -33,12 +33,12 @@ export function apacheSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'In the Filebeat install directory, run the following commands to enable the Apache module.',
+                title: 'Enable and configure the Nginx module',
+                textPre: 'In the Filebeat install directory, run the following commands to enable the Nginx module.',
                 commands: [
-                  './filebeat modules enable apache2',
+                  './filebeat modules enable nginx',
                 ],
-                textPost: 'Optional: Modify the module settings in the `modules.d/apache2.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `modules.d/nginx.yml` file.'
               },
               {
                 title: 'Start Filebeat',
@@ -69,12 +69,12 @@ export function apacheSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'Run the following commands to enable the Apache module.',
+                title: 'Enable and configure the Nginx module',
+                textPre: 'Run the following commands to enable the Nginx module.',
                 commands: [
-                  'sudo filebeat modules enable apache2',
+                  'sudo filebeat modules enable nginx',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/apache2.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/nginx.yml` file.'
               },
               {
                 title: 'Start Filebeat',
@@ -105,12 +105,12 @@ export function apacheSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'Run the following commands to enable the Apache module.',
+                title: 'Enable and configure the Nginx module',
+                textPre: 'Run the following commands to enable the Nginx module.',
                 commands: [
-                  'sudo filebeat modules enable apache2',
+                  'sudo filebeat modules enable nginx',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/apache2.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/nginx.yml` file.'
               },
               {
                 title: 'Start Filebeat',
@@ -146,12 +146,12 @@ export function apacheSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'In the `C:\\Program Files\\Filebeat` folder, run the following commands to enable the Apache module.',
+                title: 'Enable and configure the Nginx module',
+                textPre: 'In the `C:\\Program Files\\Filebeat` folder, run the following commands to enable the Nginx module.',
                 commands: [
-                  'PS C:\\Program Files\\Filebeat> filebeat.exe modules enable apache2',
+                  'PS C:\\Program Files\\Filebeat> filebeat.exe modules enable nginx',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/apache2.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/nginx.yml` file.'
               },
               {
                 title: 'Start Filebeat',
