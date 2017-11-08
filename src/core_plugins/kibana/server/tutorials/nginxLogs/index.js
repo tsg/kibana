@@ -72,7 +72,7 @@ export function nginxLogsSpecProvider() {
                 commands: [
                   'PS C:\\Program Files\\Filebeat> filebeat.exe modules enable nginx',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/nginx.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `modules.d/nginx.yml` file.'
               },
               FILEBEAT_INSTRUCTIONS.START.WINDOWS
             ]

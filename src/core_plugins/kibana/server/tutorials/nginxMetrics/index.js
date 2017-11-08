@@ -174,7 +174,7 @@ export function nginxMetricsSpecProvider() {
                 commands: [
                   'PS C:\\Program Files\\Metricbeat> metricbeat.exe modules enable nginx',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/nginx.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `modules.d/nginx.yml` file.'
               },
               {
                 title: 'Optional: Test the module',

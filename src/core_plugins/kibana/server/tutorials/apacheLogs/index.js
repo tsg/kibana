@@ -72,7 +72,7 @@ export function apacheLogsSpecProvider() {
                 commands: [
                   'PS C:\\Program Files\\Filebeat> filebeat.exe modules enable apache2',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/apache2.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `modules.d/apache2.yml` file.'
               },
               FILEBEAT_INSTRUCTIONS.START.WINDOWS
             ]

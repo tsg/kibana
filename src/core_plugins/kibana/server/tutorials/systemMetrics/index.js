@@ -156,7 +156,7 @@ export function systemMetricsSpecProvider() {
                 commands: [
                   'PS C:\\Program Files\\Metricbeat> metricbeat.exe modules enable system',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/system.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `modules.d/system.yml` file.'
               },
               {
                 title: 'Start Metricbeat',

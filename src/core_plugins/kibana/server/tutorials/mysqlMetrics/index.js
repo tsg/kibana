@@ -172,7 +172,7 @@ export function mysqlMetricsSpecProvider() {
                 commands: [
                   'PS C:\\Program Files\\Metricbeat> metricbeat.exe modules enable mysql',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/mysql.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `modules.d/mysql.yml` file.'
               },
               {
                 title: 'Optional: Test the module',

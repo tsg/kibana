@@ -72,7 +72,7 @@ export function mysqlLogsSpecProvider() {
                 commands: [
                   'PS C:\\Program Files\\Filebeat> filebeat.exe modules enable mysql',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/mysql.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `modules.d/mysql.yml` file.'
               },
               FILEBEAT_INSTRUCTIONS.START.WINDOWS
             ]
