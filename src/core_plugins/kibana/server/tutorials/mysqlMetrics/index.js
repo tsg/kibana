@@ -1,17 +1,17 @@
 import { TUTORIAL_CATEGORY } from '../../../common/tutorials/tutorial_category';
 import { INSTRUCTION_VARIANT } from '../../../common/tutorials/instruction_variant';
 
-export function apacheMetricsSpecProvider() {
+export function mysqlMetricsSpecProvider() {
   return {
-    id: 'apacheMetrics',
-    name: 'Apache metrics',
+    id: 'mysqlMetrics',
+    name: 'MySQL metrics',
     category: TUTORIAL_CATEGORY.METRICS,
-    shortDescription: 'This module fetches internal metrics from the Apache HTTP server.',
-    longDescription: 'This module fetches internal metrics from the Apache 2 HTTP server.' +
-                     ' You can read more about the Metricbeat Apache module in the [documentation].',
+    shortDescription: 'This module fetches internal metrics from MySQL.',
+    longDescription: 'This module fetches internal metrics from MySQL.' +
+                     ' You can read more about the Metricbeat MySQL module in the [documentation].',
     //iconPath: '', TODO
     completionTimeMinutes: 10,
-    //previewImagePath: 'kibana-apache.png', TODO
+    //previewImagePath: 'kibana-mysql.png', TODO
     instructionSets: [
       {
         title: 'Getting Started',
@@ -33,18 +33,18 @@ export function apacheMetricsSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'In the Metricbeat install directory, run the following commands to enable the Apache module.',
+                title: 'Enable and configure the MySQL module',
+                textPre: 'In the Metricbeat install directory, run the following commands to enable the MySQL module.',
                 commands: [
-                  './metricbeat modules enable apache',
+                  './metricbeat modules enable mysql',
                 ],
-                textPost: 'Optional: Modify the module settings in the `modules.d/apache.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `modules.d/mysql.yml` file.'
               },
               {
                 title: 'Optional: Test the module',
                 textPre: 'You can do a dry-run fetch by running the following command.',
                 commands: [
-                  './metricbeat test modules apache'
+                  './metricbeat test modules mysql'
                 ]
               },
               {
@@ -76,18 +76,18 @@ export function apacheMetricsSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'Run the following commands to enable the Apache module.',
+                title: 'Enable and configure the MySQL module',
+                textPre: 'Run the following commands to enable the MySQL module.',
                 commands: [
-                  'sudo metricbeat modules enable apache',
+                  'sudo metricbeat modules enable mysql',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/apache.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/mysql.yml` file.'
               },
               {
                 title: 'Optional: Test the module',
                 textPre: 'You can do a dry-run fetch by running the following command.',
                 commands: [
-                  'sudo metricbeat test modules apache'
+                  'sudo metricbeat test modules mysql'
                 ]
               },
               {
@@ -119,18 +119,18 @@ export function apacheMetricsSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'Run the following commands to enable the Apache module.',
+                title: 'Enable and configure the MySQL module',
+                textPre: 'Run the following commands to enable the MySQL module.',
                 commands: [
-                  'sudo metricbeat modules enable apache',
+                  'sudo metricbeat modules enable mysql',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/apache.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/mysql.yml` file.'
               },
               {
                 title: 'Optional: Test the module',
                 textPre: 'You can do a dry-run fetch by running the following command.',
                 commands: [
-                  'sudo metricbeat test modules apache'
+                  'sudo metricbeat test modules mysql'
                 ]
               },
               {
@@ -167,18 +167,18 @@ export function apacheMetricsSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'In the `C:\\Program Files\\Metricbeat` folder, run the following commands to enable the Apache module.',
+                title: 'Enable and configure the MySQL module',
+                textPre: 'In the `C:\\Program Files\\Metricbeat` folder, run the following commands to enable the MySQL module.',
                 commands: [
-                  'PS C:\\Program Files\\Metricbeat> metricbeat.exe modules enable apache',
+                  'PS C:\\Program Files\\Metricbeat> metricbeat.exe modules enable mysql',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/apache.yml` file.'
+                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/mysql.yml` file.'
               },
               {
                 title: 'Optional: Test the module',
                 textPre: 'You can do a dry-run fetch by running the following command.',
                 commands: [
-                  'PS C:\\Program Files\\Metricbeat> metricbeat.exe test modules apache'
+                  'PS C:\\Program Files\\Metricbeat> metricbeat.exe test modules mysql'
                 ]
               },
               {

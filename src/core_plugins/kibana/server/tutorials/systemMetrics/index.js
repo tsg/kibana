@@ -1,17 +1,18 @@
 import { TUTORIAL_CATEGORY } from '../../../common/tutorials/tutorial_category';
 import { INSTRUCTION_VARIANT } from '../../../common/tutorials/instruction_variant';
 
-export function apacheMetricsSpecProvider() {
+export function systemMetricsSpecProvider() {
   return {
-    id: 'apacheMetrics',
-    name: 'Apache metrics',
+    id: 'systemMetrics',
+    name: 'System metrics',
     category: TUTORIAL_CATEGORY.METRICS,
-    shortDescription: 'This module fetches internal metrics from the Apache HTTP server.',
-    longDescription: 'This module fetches internal metrics from the Apache 2 HTTP server.' +
-                     ' You can read more about the Metricbeat Apache module in the [documentation].',
+    shortDescription: 'This module collects CPU, memory, network, and disk statistics from the host.',
+    longDescription: 'This module CPU, memory, network, and disk statistics from the host.' +
+                     ' It collects system wide statistics as well as per process and per filesystem statistics.' +
+                     ' You can read more about the Metricbeat System module in the [documentation].',
     //iconPath: '', TODO
     completionTimeMinutes: 10,
-    //previewImagePath: 'kibana-apache.png', TODO
+    //previewImagePath: 'kibana-system.png', TODO
     instructionSets: [
       {
         title: 'Getting Started',
@@ -33,19 +34,13 @@ export function apacheMetricsSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'In the Metricbeat install directory, run the following commands to enable the Apache module.',
+                title: 'Enable and configure the System module',
+                textPre: 'In the Metricbeat install directory, run the following commands to enable the System module.' +
+                         ' Note that the System module is enabled by default.',
                 commands: [
-                  './metricbeat modules enable apache',
+                  './metricbeat modules enable system',
                 ],
-                textPost: 'Optional: Modify the module settings in the `modules.d/apache.yml` file.'
-              },
-              {
-                title: 'Optional: Test the module',
-                textPre: 'You can do a dry-run fetch by running the following command.',
-                commands: [
-                  './metricbeat test modules apache'
-                ]
+                textPost: 'Optional: Modify the module settings in the `modules.d/system.yml` file.'
               },
               {
                 title: 'Start Metricbeat',
@@ -76,19 +71,13 @@ export function apacheMetricsSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'Run the following commands to enable the Apache module.',
+                title: 'Enable and configure the System module',
+                textPre: 'Run the following commands to enable the System module.' +
+                         ' Note that the System module is enabled by default.',
                 commands: [
-                  'sudo metricbeat modules enable apache',
+                  'sudo metricbeat modules enable system',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/apache.yml` file.'
-              },
-              {
-                title: 'Optional: Test the module',
-                textPre: 'You can do a dry-run fetch by running the following command.',
-                commands: [
-                  'sudo metricbeat test modules apache'
-                ]
+                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/system.yml` file.'
               },
               {
                 title: 'Start Metricbeat',
@@ -119,19 +108,13 @@ export function apacheMetricsSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'Run the following commands to enable the Apache module.',
+                title: 'Enable and configure the System module',
+                textPre: 'Run the following commands to enable the System module.' +
+                         ' Note that the System module is enabled by default.',
                 commands: [
-                  'sudo metricbeat modules enable apache',
+                  'sudo metricbeat modules enable system',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/apache.yml` file.'
-              },
-              {
-                title: 'Optional: Test the module',
-                textPre: 'You can do a dry-run fetch by running the following command.',
-                commands: [
-                  'sudo metricbeat test modules apache'
-                ]
+                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/system.yml` file.'
               },
               {
                 title: 'Start Metricbeat',
@@ -167,19 +150,13 @@ export function apacheMetricsSpecProvider() {
                            'adjust the `output.elasticsearch` settings if needed.'
               },
               {
-                title: 'Enable and configure the Apache module',
-                textPre: 'In the `C:\\Program Files\\Metricbeat` folder, run the following commands to enable the Apache module.',
+                title: 'Enable and configure the System module',
+                textPre: 'In the `C:\\Program Files\\Metricbeat` folder, run the following commands to enable the System module.' +
+                         ' Note that the System module is enabled by default.',
                 commands: [
-                  'PS C:\\Program Files\\Metricbeat> metricbeat.exe modules enable apache',
+                  'PS C:\\Program Files\\Metricbeat> metricbeat.exe modules enable system',
                 ],
-                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/apache.yml` file.'
-              },
-              {
-                title: 'Optional: Test the module',
-                textPre: 'You can do a dry-run fetch by running the following command.',
-                commands: [
-                  'PS C:\\Program Files\\Metricbeat> metricbeat.exe test modules apache'
-                ]
+                textPost: 'Optional: Modify the module settings in the `/etc/metricbeat/modules.d/system.yml` file.'
               },
               {
                 title: 'Start Metricbeat',
