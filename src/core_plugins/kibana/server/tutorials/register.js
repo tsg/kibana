@@ -1,11 +1,13 @@
-import { systemSpecProvider } from './system';
-import { apacheSpecProvider } from './apache';
-import { nginxSpecProvider } from './nginx';
-import { mysqlSpecProvider } from './mysql';
+import { systemLogsSpecProvider } from './systemLogs';
+import { apacheLogsSpecProvider } from './apacheLogs';
+import { apacheMetricsSpecProvider } from './apacheMetrics';
+import { nginxLogsSpecProvider } from './nginxLogs';
+import { mysqlLogsSpecProvider } from './mysqlLogs';
 
 export function registerTutorials(server) {
-  server.registerTutorial(systemSpecProvider);
-  server.registerTutorial(apacheSpecProvider);
-  server.registerTutorial(nginxSpecProvider);
-  server.registerTutorial(mysqlSpecProvider);
+  server.registerTutorial(systemLogsSpecProvider);
+  server.registerTutorial(apacheLogsSpecProvider);
+  server.registerTutorial(apacheMetricsSpecProvider);
+  server.registerTutorial(nginxLogsSpecProvider);
+  server.registerTutorial(mysqlLogsSpecProvider);
 }

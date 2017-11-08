@@ -1,9 +1,9 @@
 import { TUTORIAL_CATEGORY } from '../../../common/tutorials/tutorial_category';
 import { INSTRUCTION_VARIANT } from '../../../common/tutorials/instruction_variant';
 
-export function mysqlSpecProvider() {
+export function mysqlLogsSpecProvider() {
   return {
-    id: 'mysql',
+    id: 'mysqlLogs',
     name: 'MySQL logs',
     category: TUTORIAL_CATEGORY.LOGGING,
     shortDescription: 'This module parses slow logs and error logs created by MySQL.',
@@ -24,7 +24,7 @@ export function mysqlSpecProvider() {
                 textPre: 'Download and install Filebeat by running the commands below.' +
                          ' Skip this step if you already have Filebeat installed.' +
                          ' If you are installing Filebeat for the first time, we recommend reading the [Getting Started]' +
-                         ' guide in the online documentation',
+                         ' guide in the online documentation.',
                 commands: [
                   'curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{config.kibana.version}-darwin-x86_64.tar.gz',
                   'tar xzvf filebeat-{config.kibana.version}-darwin-x86_64.tar.gz'
@@ -60,7 +60,7 @@ export function mysqlSpecProvider() {
                 textPre: 'Download and install Filebeat by running the commands below.' +
                          ' Skip this step if you already have Filebeat installed.' +
                          ' If you are installing Filebeat for the first time, we recommend reading the [Getting Started]' +
-                         ' guide in the online documentation',
+                         ' guide in the online documentation.',
                 commands: [
                   'curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{config.kibana.version}-amd64.deb',
                   'sudo dpkg -i filebeat-{config.kibana.version}-amd64.deb'
@@ -96,7 +96,7 @@ export function mysqlSpecProvider() {
                 textPre: 'Download and install Filebeat by running the commands below.' +
                          ' Skip this step if you already have Filebeat installed.' +
                          ' If you are installing Filebeat for the first time, we recommend reading the [Getting Started]' +
-                         ' guide in the online documentation',
+                         ' guide in the online documentation.',
                 commands: [
                   'curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{config.kibana.version}-x86_64.rpm',
                   'sudo rpm -vi filebeat-{config.kibana.version}-x86_64.rpm'
