@@ -1,5 +1,6 @@
 import { TUTORIAL_CATEGORY } from '../../../common/tutorials/tutorial_category';
 import { INSTRUCTION_VARIANT } from '../../../common/tutorials/instruction_variant';
+import { FILEBEAT_INSTRUCTIONS } from '../../../common/tutorials/tutorial_beats_instructions';
 
 export function systemLogsSpecProvider() {
   return {
@@ -20,19 +21,7 @@ export function systemLogsSpecProvider() {
           {
             id: INSTRUCTION_VARIANT.OSX,
             instructions: [
-              {
-                title: 'Download and install Filebeat',
-                textPre: 'Download and install Filebeat by running the commands below.' +
-                         ' Skip this step if you already have Filebeat installed.' +
-                         ' If you are installing Filebeat for the first time, we recommend reading the [Getting Started]' +
-                         ' guide in the online documentation.',
-                commands: [
-                  'curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{config.kibana.version}-darwin-x86_64.tar.gz',
-                  'tar xzvf filebeat-{config.kibana.version}-darwin-x86_64.tar.gz'
-                ],
-                textPost: 'Edit the `filebeat-{config.kibana.version}-darwin-x86_64/filebeat.yml` file and ' +
-                           'adjust the `output.elasticsearch` settings if needed.'
-              },
+              FILEBEAT_INSTRUCTIONS.INSTALL.OSX,
               {
                 title: 'Enable and configure the System module',
                 textPre: 'In the Filebeat install directory, run the following commands to enable the System module.',
@@ -41,34 +30,13 @@ export function systemLogsSpecProvider() {
                 ],
                 textPost: 'Optional: Modify the module settings in the `modules.d/system.yml` file.'
               },
-              {
-                title: 'Start Filebeat',
-                textPre: 'Setup the Kibana dashboards and start Filebeat with the following commands.' +
-                         ' Skip this step if you already have Filebeat installed.',
-                commands: [
-                  './filebeat -e --setup',
-                ],
-                textPost: 'The `--setup` flag loads the Kibana dashboards. If the dashboards are already setup, ' +
-                          'you don\'t need to use this flag.'
-              }
+              FILEBEAT_INSTRUCTIONS.START.OSX
             ]
           },
           {
             id: INSTRUCTION_VARIANT.DEB,
             instructions: [
-              {
-                title: 'Download and install Filebeat',
-                textPre: 'Download and install Filebeat by running the commands below.' +
-                         ' Skip this step if you already have Filebeat installed.' +
-                         ' If you are installing Filebeat for the first time, we recommend reading the [Getting Started]' +
-                         ' guide in the online documentation.',
-                commands: [
-                  'curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{config.kibana.version}-amd64.deb',
-                  'sudo dpkg -i filebeat-{config.kibana.version}-amd64.deb'
-                ],
-                textPost: 'Edit the `/etc/filebeat/filebeat.yml` file and ' +
-                           'adjust the `output.elasticsearch` settings if needed.'
-              },
+              FILEBEAT_INSTRUCTIONS.INSTALL.DEB,
               {
                 title: 'Enable and configure the System module',
                 textPre: 'Run the following commands to enable the System module.',
@@ -77,34 +45,13 @@ export function systemLogsSpecProvider() {
                 ],
                 textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/system.yml` file.'
               },
-              {
-                title: 'Start Filebeat',
-                textPre: 'Setup the Kibana dashboards and start Filebeat with the following commands.',
-                commands: [
-                  'sudo filebeat setup -e',
-                  'sudo service filebeat start',
-                ],
-                textPost: 'The `setup` command loads the Kibana dashboards. If the dashboards are already installed, ' +
-                          'you don\'t need to run it again.'
-              }
+              FILEBEAT_INSTRUCTIONS.START.DEB
             ]
           },
           {
             id: INSTRUCTION_VARIANT.RPM,
             instructions: [
-              {
-                title: 'Download and install Filebeat',
-                textPre: 'Download and install Filebeat by running the commands below.' +
-                         ' Skip this step if you already have Filebeat installed.' +
-                         ' If you are installing Filebeat for the first time, we recommend reading the [Getting Started]' +
-                         ' guide in the online documentation.',
-                commands: [
-                  'curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{config.kibana.version}-x86_64.rpm',
-                  'sudo rpm -vi filebeat-{config.kibana.version}-x86_64.rpm'
-                ],
-                textPost: 'Edit the `/etc/filebeat/filebeat.yml` file and ' +
-                           'adjust the `output.elasticsearch` settings if needed.'
-              },
+              FILEBEAT_INSTRUCTIONS.INSTALL.RPM,
               {
                 title: 'Enable and configure the System module',
                 textPre: 'Run the following commands to enable the System module.',
@@ -113,16 +60,7 @@ export function systemLogsSpecProvider() {
                 ],
                 textPost: 'Optional: Modify the module settings in the `/etc/filebeat/modules.d/system.yml` file.'
               },
-              {
-                title: 'Start Filebeat',
-                textPre: 'Setup the Kibana dashboards and start Filebeat with the following commands.',
-                commands: [
-                  'sudo filebeat setup -e',
-                  'sudo service filebeat start',
-                ],
-                textPost: 'The `setup` command loads the Kibana dashboards. If the dashboards are already installed, ' +
-                          'you don\'t need to run it again.'
-              }
+              FILEBEAT_INSTRUCTIONS.START.RPM
             ]
           }
         ]
