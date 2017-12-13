@@ -56,7 +56,7 @@ export function Home({ addBasePath, directories }) {
               </KuiCardDescriptionTitle>
 
               <KuiCardDescriptionText>
-                Ingest data from popular logging platforms and get immediate dashboards.
+                Ingest logs from popular data sources and easily visualize in preconfigured dashboards.
               </KuiCardDescriptionText>
             </KuiCardDescription>
 
@@ -82,7 +82,7 @@ export function Home({ addBasePath, directories }) {
               </KuiCardDescriptionTitle>
 
               <KuiCardDescriptionText>
-                Choose from Apache, MongoDB, Docker, MySQL, and more...
+                Collect metrics from the operating system and services running on your servers.
               </KuiCardDescriptionText>
             </KuiCardDescription>
 
@@ -103,12 +103,12 @@ export function Home({ addBasePath, directories }) {
                   src={addBasePath('/plugins/kibana/assets/app_security.svg')}
                 />
                 <p>
-                  Security analytics
+                  Security Analytics
                 </p>
               </KuiCardDescriptionTitle>
 
               <KuiCardDescriptionText>
-                Ingest data from popular security solutions and get immediately insights.
+                Centralize security events for interactive investigation in ready-to-go visualizations.
               </KuiCardDescriptionText>
             </KuiCardDescription>
 
@@ -138,7 +138,7 @@ export function Home({ addBasePath, directories }) {
           >
             <KuiFlexItem>
               <h1 className="kuiTitle">
-                Add data
+                Add Data to Kibana
               </h1>
             </KuiFlexItem>
 
@@ -164,8 +164,8 @@ export function Home({ addBasePath, directories }) {
           </KuiFlexGroup>
 
           <p className="kuiText kuiSubduedText kuiVerticalRhythm kuiVerticalRhythmSmall">
-            These turn-key solutions will help you quickly add data into Kibana and turn it into
-            pre-built dashboards / monitoring systems.
+            These turnkey solutions will help you quickly add data into Kibana and turn it into
+            pre-built dashboards and monitoring systems.
           </p>
 
           { renderPromo() }
