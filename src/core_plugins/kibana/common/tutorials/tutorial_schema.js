@@ -31,6 +31,20 @@ const instructionsSchema = Joi.object({
   params: Joi.array().items(paramSchema)
 });
 
+const actionButtonSchema = Joi.object({
+  url: Joi.string().required(),
+  linkLabel: Joi.string().required()
+});
+
+const exportedFieldsSchema = Joi.object({
+  documentationUrl: Joi.string().required()
+});
+
+const artifactsSchema = Joi.object({
+  actionButton: actionButtonSchema,
+  exportedFields: exportedFieldsSchema
+});
+
 export const tutorialSchema = {
   id: Joi.string().regex(/^[a-zA-Z0-9-]+$/).required(),
   category: Joi.string().valid(Object.values(TUTORIAL_CATEGORY)).required(),
@@ -40,6 +54,7 @@ export const tutorialSchema = {
   longDescription: Joi.string().required(),
   completionTimeMinutes: Joi.number().integer(),
   previewImagePath: Joi.string(),
+  artifacts: artifactsSchema,
 
   // kibana and elastic cluster running on prem
   onPrem: instructionsSchema.required(),
