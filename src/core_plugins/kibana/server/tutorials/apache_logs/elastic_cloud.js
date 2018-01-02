@@ -10,7 +10,7 @@ export const ELASTIC_CLOUD_INSTRUCTIONS = {
         {
           id: INSTRUCTION_VARIANT.OSX,
           instructions: [
-            FILEBEAT_CLOUD_INSTRUCTIONS.INSTALL.OSX,
+            FILEBEAT_INSTRUCTIONS.INSTALL.OSX,
             FILEBEAT_CLOUD_INSTRUCTIONS.CONFIG.OSX,
             {
               title: 'Enable and configure the apache2 module',
@@ -26,7 +26,7 @@ export const ELASTIC_CLOUD_INSTRUCTIONS = {
         {
           id: INSTRUCTION_VARIANT.DEB,
           instructions: [
-            FILEBEAT_CLOUD_INSTRUCTIONS.INSTALL.DEB,
+            FILEBEAT_INSTRUCTIONS.INSTALL.DEB,
             FILEBEAT_CLOUD_INSTRUCTIONS.CONFIG.DEB,
             {
               title: 'Enable and configure the apache2 module',
@@ -41,7 +41,7 @@ export const ELASTIC_CLOUD_INSTRUCTIONS = {
         {
           id: INSTRUCTION_VARIANT.RPM,
           instructions: [
-            FILEBEAT_CLOUD_INSTRUCTIONS.INSTALL.RPM,
+            FILEBEAT_INSTRUCTIONS.INSTALL.RPM,
             FILEBEAT_CLOUD_INSTRUCTIONS.CONFIG.RPM,
             {
               title: 'Enable and configure the apache2 module',
@@ -56,7 +56,7 @@ export const ELASTIC_CLOUD_INSTRUCTIONS = {
         {
           id: INSTRUCTION_VARIANT.WINDOWS,
           instructions: [
-            FILEBEAT_CLOUD_INSTRUCTIONS.INSTALL.WINDOWS,
+            FILEBEAT_INSTRUCTIONS.INSTALL.WINDOWS,
             FILEBEAT_CLOUD_INSTRUCTIONS.CONFIG.WINDOWS,
             {
               title: 'Enable and configure the apache2 module',

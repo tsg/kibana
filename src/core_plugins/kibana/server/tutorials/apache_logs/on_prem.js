@@ -9,7 +9,9 @@ export const ON_PREM_INSTRUCTIONS = {
         {
           id: INSTRUCTION_VARIANT.OSX,
           instructions: [
+            FILEBEAT_INSTRUCTIONS.PLUGINS.GEOIP_AND_UA,
             FILEBEAT_INSTRUCTIONS.INSTALL.OSX,
+            FILEBEAT_INSTRUCTIONS.CONFIG.OSX,
             {
               title: 'Enable and configure the apache2 module',
               textPre: 'From the installation directory, run:',
@@ -24,6 +26,7 @@ export const ON_PREM_INSTRUCTIONS = {
         {
           id: INSTRUCTION_VARIANT.DEB,
           instructions: [
+            FILEBEAT_INSTRUCTIONS.PLUGINS.GEOIP_AND_UA,
             FILEBEAT_INSTRUCTIONS.INSTALL.DEB,
             {
               title: 'Enable and configure the apache2 module',
@@ -38,6 +41,7 @@ export const ON_PREM_INSTRUCTIONS = {
         {
           id: INSTRUCTION_VARIANT.RPM,
           instructions: [
+            FILEBEAT_INSTRUCTIONS.PLUGINS.GEOIP_AND_UA,
             FILEBEAT_INSTRUCTIONS.INSTALL.RPM,
             {
               title: 'Enable and configure the apache2 module',
@@ -52,6 +56,7 @@ export const ON_PREM_INSTRUCTIONS = {
         {
           id: INSTRUCTION_VARIANT.WINDOWS,
           instructions: [
+            FILEBEAT_INSTRUCTIONS.PLUGINS.GEOIP_AND_UA,
             FILEBEAT_INSTRUCTIONS.INSTALL.WINDOWS,
             {
               title: 'Enable and configure the apache2 module',
