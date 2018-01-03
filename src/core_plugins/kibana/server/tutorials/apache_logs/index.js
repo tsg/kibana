@@ -26,7 +26,7 @@ export function apacheLogsSpecProvider() {
       }
     },
     completionTimeMinutes: 10,
-    previewImagePath: '/plugins/kibana/home/tutorial_resources/apacheLogs/kibana-apache2.png',
+    previewImagePath: '/plugins/kibana/home/tutorial_resources/apache_logs/screenshot.png',
     onPrem: ON_PREM_INSTRUCTIONS,
     elasticCloud: ELASTIC_CLOUD_INSTRUCTIONS,
     onPremElasticCloud: ON_PREM_ELASTIC_CLOUD_INSTRUCTIONS,
