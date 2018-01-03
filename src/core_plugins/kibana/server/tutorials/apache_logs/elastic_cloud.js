@@ -1,6 +1,7 @@
 import { INSTRUCTION_VARIANT } from '../../../common/tutorials/instruction_variant';
 import { FILEBEAT_INSTRUCTIONS } from '../../../common/tutorials/filebeat_instructions';
 import { FILEBEAT_CLOUD_INSTRUCTIONS } from '../../../common/tutorials/filebeat_cloud_instructions';
+import { ENABLE_INSTRUCTIONS } from './enable';
 
 export const ELASTIC_CLOUD_INSTRUCTIONS = {
   instructionSets: [
@@ -12,14 +13,7 @@ export const ELASTIC_CLOUD_INSTRUCTIONS = {
           instructions: [
             FILEBEAT_INSTRUCTIONS.INSTALL.OSX,
             FILEBEAT_CLOUD_INSTRUCTIONS.CONFIG.OSX,
-            {
-              title: 'Enable and configure the apache2 module',
-              textPre: 'From the installation directory, run:',
-              commands: [
-                './filebeat modules enable apache2',
-              ],
-              textPost: 'Modify the settings in the `modules.d/apache2.yml` file.'
-            },
+            ENABLE_INSTRUCTIONS.OSX,
             FILEBEAT_INSTRUCTIONS.START.OSX
           ]
         },
@@ -28,13 +22,7 @@ export const ELASTIC_CLOUD_INSTRUCTIONS = {
           instructions: [
             FILEBEAT_INSTRUCTIONS.INSTALL.DEB,
             FILEBEAT_CLOUD_INSTRUCTIONS.CONFIG.DEB,
-            {
-              title: 'Enable and configure the apache2 module',
-              commands: [
-                'sudo filebeat modules enable apache2',
-              ],
-              textPost: 'Modify the settings in the `/etc/filebeat/modules.d/apache2.yml` file.'
-            },
+            ENABLE_INSTRUCTIONS.DEB,
             FILEBEAT_INSTRUCTIONS.START.DEB
           ]
         },
@@ -43,13 +31,7 @@ export const ELASTIC_CLOUD_INSTRUCTIONS = {
           instructions: [
             FILEBEAT_INSTRUCTIONS.INSTALL.RPM,
             FILEBEAT_CLOUD_INSTRUCTIONS.CONFIG.RPM,
-            {
-              title: 'Enable and configure the apache2 module',
-              commands: [
-                'sudo filebeat modules enable apache2',
-              ],
-              textPost: 'Modify the settings in the `/etc/filebeat/modules.d/apache2.yml` file.'
-            },
+            ENABLE_INSTRUCTIONS.RPM,
             FILEBEAT_INSTRUCTIONS.START.RPM
           ]
         },
@@ -58,14 +40,7 @@ export const ELASTIC_CLOUD_INSTRUCTIONS = {
           instructions: [
             FILEBEAT_INSTRUCTIONS.INSTALL.WINDOWS,
             FILEBEAT_CLOUD_INSTRUCTIONS.CONFIG.WINDOWS,
-            {
-              title: 'Enable and configure the apache2 module',
-              textPre: 'From the `C:\\Program Files\\Filebeat` folder, run:',
-              commands: [
-                'PS C:\\Program Files\\Filebeat> filebeat.exe modules enable apache2',
-              ],
-              textPost: 'Modify the settings in the `modules.d/apache2.yml` file.'
-            },
+            ENABLE_INSTRUCTIONS.WINDOWS,
             FILEBEAT_INSTRUCTIONS.START.WINDOWS
           ]
         }
