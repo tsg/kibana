@@ -54,7 +54,7 @@ export const FILEBEAT_INSTRUCTIONS = {
       textPre: 'The `setup` command loads the Kibana dashboards.' +
                 ' If the dashboards are already set up, omit this command.',
       commands: [
-        './filebeat setup -e',
+        './filebeat setup',
         './filebeat -e',
       ]
     },
@@ -63,7 +63,7 @@ export const FILEBEAT_INSTRUCTIONS = {
       textPre: 'The `setup` command loads the Kibana dashboards. If the dashboards are already set up, ' +
                 'omit this command.',
       commands: [
-        'sudo filebeat setup -e',
+        'sudo filebeat setup',
         'sudo service filebeat start',
       ]
     },
@@ -72,7 +72,7 @@ export const FILEBEAT_INSTRUCTIONS = {
       textPre: 'The `setup` command loads the Kibana dashboards. If the dashboards are already set up, ' +
                 'omit this command.',
       commands: [
-        'sudo filebeat setup -e',
+        'sudo filebeat setup',
         'sudo service filebeat start',
       ],
     },
@@ -81,7 +81,7 @@ export const FILEBEAT_INSTRUCTIONS = {
       textPre: 'The `setup` command loads the Kibana dashboards. If the dashboards are already set up, ' +
                 'omit this command.',
       commands: [
-        'PS C:\\Program Files\\Filebeat> filebeat.exe setup -e',
+        'PS C:\\Program Files\\Filebeat> filebeat.exe setup',
         'PS C:\\Program Files\\Filebeat> Service-Start filebeat',
       ]
     }

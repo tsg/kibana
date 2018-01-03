@@ -28,6 +28,7 @@ export const ON_PREM_INSTRUCTIONS = {
           instructions: [
             FILEBEAT_INSTRUCTIONS.PLUGINS.GEOIP_AND_UA,
             FILEBEAT_INSTRUCTIONS.INSTALL.DEB,
+            FILEBEAT_INSTRUCTIONS.CONFIG.DEB,
             {
               title: 'Enable and configure the apache2 module',
               commands: [
@@ -43,6 +44,7 @@ export const ON_PREM_INSTRUCTIONS = {
           instructions: [
             FILEBEAT_INSTRUCTIONS.PLUGINS.GEOIP_AND_UA,
             FILEBEAT_INSTRUCTIONS.INSTALL.RPM,
+            FILEBEAT_INSTRUCTIONS.CONFIG.RPM,
             {
               title: 'Enable and configure the apache2 module',
               commands: [
@@ -58,6 +60,7 @@ export const ON_PREM_INSTRUCTIONS = {
           instructions: [
             FILEBEAT_INSTRUCTIONS.PLUGINS.GEOIP_AND_UA,
             FILEBEAT_INSTRUCTIONS.INSTALL.WINDOWS,
+            FILEBEAT_INSTRUCTIONS.CONFIG.WINDOWS,
             {
               title: 'Enable and configure the apache2 module',
               textPre: 'From the `C:\\Program Files\\Filebeat` folder, run:',
