@@ -29,6 +29,6 @@ export function apacheMetricsSpecProvider() {
     previewImagePath: '/plugins/kibana/home/tutorial_resources/apache_metrics/screenshot.png',
     onPrem: ON_PREM_INSTRUCTIONS,
     elasticCloud: ELASTIC_CLOUD_INSTRUCTIONS,
-    onPremElasticCloud: ON_PREM_ELASTIC_CLOUD_INSTRUCTIONS,
+    onPremElasticCloud: ON_PREM_ELASTIC_CLOUD_INSTRUCTIONS
   };
 }
