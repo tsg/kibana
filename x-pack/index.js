@@ -31,6 +31,7 @@ import { infra } from './plugins/infra';
 import { rollup } from './plugins/rollup';
 import { taskManager } from './plugins/task_manager';
 import { alertService } from './plugins/alerts';
+import { siemRules } from './plugins/siem_rules';
 
 module.exports = function (kibana) {
   return [
@@ -61,5 +62,6 @@ module.exports = function (kibana) {
     rollup(kibana),
     taskManager(kibana),
     alertService(kibana),
+    siemRules(kibana),
   ];
 };
