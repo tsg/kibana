@@ -4,10 +4,8 @@
  * you may not use this file except in compliance with the Elastic License.
  */
 
-import Joi from 'joi';
-
 const APP_ID = 'siem_rules';
-const ROOT = '/api/siem_rules'
+const ROOT = '/api/siem_rules';
 
 export function siemRules(kibana) {
   return new kibana.Plugin({
@@ -45,10 +43,10 @@ export function initRoutes(server) {
   server.route({
     path: `${ROOT}/tasks/start`,
     method: 'POST',
-    async handler(request) {
+    async handler() {
       try {
         const task = await taskManager.schedule();
-        return task
+        return task;
         return task;
       } catch (err) {
         return err;
