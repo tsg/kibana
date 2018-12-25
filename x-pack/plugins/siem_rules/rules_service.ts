@@ -110,7 +110,7 @@ export class RulesService {
       interval: '1m',
       scope: 'siem_rules',
       params: {
-        payload: payload,
+        payload,
       },
     });
   }
