@@ -151,10 +151,10 @@ export class RulesService {
               ignoreUnavailable: true,
               q: payload.query,
             });
-            context.kbnServer.server.log(
-              ['info', 'siem-rules-service'],
-              `Result: ` + JSON.stringify(result)
-            );
+            // context.kbnServer.server.log(
+            //  ['info', 'siem-rules-service'],
+            //  `Result: ` + JSON.stringify(result)
+            // );
           },
 
           async cancel() {
