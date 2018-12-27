@@ -11,7 +11,7 @@ interface ESQueryRuleParams {
   name: string;
   query: strin;
   indexPattern: string;
-  searchLastMinutes: number;
+  lookbackMinutes: number;
 }
 
 export class RulesService {
@@ -43,9 +43,9 @@ export class RulesService {
             indexPattern: Joi.string()
               .allow('', null)
               .default('auditbeat-*'),
-            searchLastMinutes: Joi.number()
+            lookbackMinutes: Joi.number()
               .allow(null)
-              .default(5),
+              .default(15),
           }).required(),
         },
       },
@@ -78,7 +78,7 @@ export class RulesService {
         tasks.forEach(task => {
           this.taskManager.remove(task.id);
         });
-        return { ack: true };
+        return { acknowledged: true };
       },
     });
 
@@ -131,6 +131,7 @@ export class RulesService {
       createTaskRunner(context: RunContext) {
         return {
           async run() {
+            const now = new Date();
             const payload: ESQueryRuleParams = context.taskInstance.params.payload;
             context.kbnServer.server.log(
               ['info', 'siem-rules-service'],
@@ -149,12 +150,72 @@ export class RulesService {
             const result = await callWithRequest(req, 'search', {
               index: payload.indexPattern,
               ignoreUnavailable: true,
-              q: payload.query,
+              body: {
+                query: {
+                  bool: {
+                    must: [
+                      {
+                        query_string: {
+                          query: payload.query,
+                          analyze_wildcard: true,
+                        },
+                      },
+                      {
+                        range: {
+                          '@timestamp': {
+                            gte: new Date(now - payload.lookbackMinutes * 60000),
+                            lte: now,
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
             });
-            // context.kbnServer.server.log(
-            //  ['info', 'siem-rules-service'],
-            //  `Result: ` + JSON.stringify(result)
-            // );
+            context.kbnServer.server.log(
+              ['info', 'siem-rules-service'],
+              `Rule hits: ${result.hits.total.value}`
+            );
+            context.kbnServer.server.log(
+              ['info', 'siem-rules-service'],
+              `Hits: ` + JSON.stringify(result.hits)
+            );
+
+            const bulkBody: object[] = [];
+            let len = 0;
+            if (result.hits.hits.length > 0) {
+              result.hits.hits.forEach(hit => {
+                bulkBody.push({ index: { _index: 'siem_rule_matches', _type: '_doc' } });
+                bulkBody.push({
+                  '@timestamp': hit._source['@timestamp'] || now,
+                  detection_time: now,
+                  hit: JSON.stringify(hit._source),
+                  index: hit._index,
+                  id: hit._id,
+                  taskId: context.taskInstance.id,
+                  query: payload.query,
+                });
+              });
+
+              await callWithRequest(req, 'bulk', {
+                body: bulkBody,
+              });
+              len = result.hits.hits.length;
+            }
+
+            await callWithRequest(req, 'index', {
+              index: '.siem_rules_summary',
+              type: '_doc',
+              body: {
+                '@timestamp': now,
+                task_id: context.taskInstance.id,
+                rule_name: payload.name,
+                total_hits: result.hits.total.value,
+                query: payload.query,
+                hits: len,
+              },
+            });
           },
 
           async cancel() {
