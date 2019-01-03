@@ -12,6 +12,7 @@ interface ESQueryRuleParams {
   query: strin;
   indexPattern: string;
   lookbackMinutes: number;
+  interval: number;
 }
 
 export class RulesService {
@@ -46,6 +47,9 @@ export class RulesService {
             lookbackMinutes: Joi.number()
               .allow(null)
               .default(15),
+            interval: Joi.number()
+              .allow(null)
+              .default(1),
           }).required(),
         },
       },
@@ -113,7 +117,7 @@ export class RulesService {
     return await this.taskManager.schedule({
       taskType: 'siemRuleQuery',
       runAt: new Date(),
-      interval: '1m',
+      interval: payload.interval + 'm',
       scope: 'siem_rules',
       params: {
         payload,
