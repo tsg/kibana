@@ -49,7 +49,7 @@ export const buildAuthQuery = ({
         authentication_success: {
           filter: {
             term: {
-              'event.outcome': 'success',
+              'event.type': 'authentication_success',
             },
           },
         },
@@ -62,7 +62,7 @@ export const buildAuthQuery = ({
             count: {
               filter: {
                 term: {
-                  'event.outcome': 'success',
+                  'event.type': 'authentication_success',
                 },
               },
             },
@@ -71,7 +71,7 @@ export const buildAuthQuery = ({
         authentication_failure: {
           filter: {
             term: {
-              'event.outcome': 'failure',
+              'event.type': 'authentication_failure',
             },
           },
         },
@@ -84,7 +84,7 @@ export const buildAuthQuery = ({
             count: {
               filter: {
                 term: {
-                  'event.outcome': 'failure',
+                  'event.type': 'authentication_failure',
                 },
               },
             },
